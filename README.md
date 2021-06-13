@@ -6,7 +6,8 @@ Fashion-MNIST is a dataset of Zalando's article images. The dataset is divided i
 <a/>
 
 Here is an example of how the data looks like:
-### !!!Example images!!!
+![](docimg/classes_single_exampels.png)
+![](docimg/single_class_exampels.png)
 
 The images are all greyscale and centered. Each training and test sample is assigned to one of following labels:<br>
 <table>
@@ -96,7 +97,6 @@ I have performed normalization of images and I have experimented with Principal 
 reducing dimensionality didn't provide good results. Therefore in the end I have decided not to use PCA.<br>
 
 ### Convolutional Neural Network<br>
-<div style="text-align: justify">
 CNNs have become state-of-the-art computer vision technique. Among many kind of Neural Networks, these have proved to be very successful in image classification
 with reasonable computational cost.<br><br>
 
@@ -113,7 +113,7 @@ didn't provide good results.<br>
 
 #### The best model architecture
 
-## Model architecture Image
+![](docimg/CNN Concat.png)
 
 Above model firtly performs double convolution with max pooling on the input two times. It uses padding to keep feature maps sizes unchanged, 
 due to the importance of edges of the images. Then the CNN performs convolution three times increasing channels number to 64 with pooling at the end to reduce dimentionality.
