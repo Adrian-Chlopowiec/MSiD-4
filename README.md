@@ -5,8 +5,8 @@ Fashion-MNIST is a dataset of Zalando's article images. The dataset is divided i
 
 <a/>
 
-Here is an example of how the data looks like:
-![](docimg/classes_single_exampels.png)
+Here is an example of how the data looks like:<br>
+![](docimg/classes_single_exampels.png)<br>
 ![](docimg/single_class_exampels.png)
 
 The images are all greyscale and centered. Each training and test sample is assigned to one of following labels:<br>
@@ -113,7 +113,7 @@ didn't provide good results.<br>
 
 #### The best model architecture
 
-![](docimg/CNN Concat.png)
+![](docimg/CNNConcat.png)
 
 Above model firtly performs double convolution with max pooling on the input two times. It uses padding to keep feature maps sizes unchanged, 
 due to the importance of edges of the images. Then the CNN performs convolution three times increasing channels number to 64 with pooling at the end to reduce dimentionality.
