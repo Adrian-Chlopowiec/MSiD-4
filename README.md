@@ -6,8 +6,8 @@ Fashion-MNIST is a dataset of Zalando's article images. The dataset is divided i
 <a/>
 
 Here is an example of how the data looks like:
-![](docimg/classes_single_example.png)
-![](docimg/single_class_examples.png)
+![](docimg/classes_single_exampels.png)
+![](docimg/single_class_exampels.png)
 
 The images are all greyscale and centered. Each training and test sample is assigned to one of following labels:<br>
 <table>
