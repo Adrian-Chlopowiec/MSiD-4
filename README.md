@@ -115,16 +115,16 @@ For the loss function I have chosen *CrossEntropyLoss*, because it perfmorms wel
 stochastic gradient descent. I have divided the data set into minibatches, each in size of 16.
 
 #### References
-Batch Normalization<br>
+**Batch Normalization**<br>
 Ioffe, Sergey, and Christian Szegedy. "Batch normalization: Accelerating deep network training by reducing internal covariate shift." International conference on machine learning. PMLR, 2015.
 
-Inspirations for CNNs architectures<br>
+**Inspirations for CNNs architectures**<br>
 https://towardsdatascience.com/illustrated-10-cnn-architectures-95d78ace614d?fbclid=IwAR3jPDP_7dxDurCnPmhXPK7fRlS3Vp5qM9pKri13CNufvOQjyL0spQaHQtM
 
-General machine learning knowledge and Logistic Regression<br>
+**General machine learning knowledge and Logistic Regression**<br>
 Sebastian Raschka, Vahid Mirjalili Python, Machine Learning 2019
 
-Guide on direction of parameter choices for CNN layers<br>
+**Guide on direction of parameter choices for CNN layers**<br>
 https://towardsdatascience.com/a-guide-to-an-efficient-way-to-build-neural-network-architectures-part-ii-hyper-parameter-42efca01e5d7
 
 #### The best model architecture
