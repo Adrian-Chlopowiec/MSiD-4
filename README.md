@@ -223,11 +223,12 @@ https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 1. Open Anaconda.
 2. Move to the folder with my repository code.
-3. Create a virtual enviroment with `conda create --name name_of_env --file requirements.txt`
+3. Create a virtual enviroment with `conda create --name name_of_env`
 4. Activate a virtual enviroment with `conda activate name_of_env`
-5. Open Jupyter Lab with `jupyter lab`. Make sure you are in a parent folder of downloaded repository.
-6. Move to the MSiD-4 folder.
-7. Open MSiD-Zadanie4.ipynb
-8. You can run the code with one click on button on the upper side of notebok: "Restart the kernel, and re-run the whole notebook".
-9. The data is downloaded automatically by PyTorch to data folder.
-10. In section Convolutional Neural Network Model -> Model Evalutaion you can load several saved pre-trained models to check their accuracy running the cell below.
+5. Install packages with (you may need to adjust CUDA for your GPU) `conda install pip matplotlib numpy scikit-learn python=3.6 pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch`
+6. Install Jupyer Lab with `conda install -c conda-forge jupyterlab`
+7. Open Jupyter Lab with `jupyter lab`. Make sure you are in a parent folder of downloaded repository.
+8. Open MSiD-Zadanie4.ipynb
+9. You can run the code with one click on button on the upper side of notebok: "Restart the kernel, and re-run the whole notebook".
+10. The data is downloaded automatically by PyTorch to data folder.
+11. In section Convolutional Neural Network Model -> Model Evalutaion you can load several saved pre-trained models to check their accuracy running the cell below.
