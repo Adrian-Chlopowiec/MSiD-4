@@ -98,18 +98,34 @@ reducing dimensionality didn't provide good results. Therefore in the end I have
 
 ### Convolutional Neural Network<br>
 CNNs have become state-of-the-art computer vision technique. Among many kind of Neural Networks, these have proved to be very successful in image classification
-with reasonable computational cost.<br><br>
+with reasonable computational cost.<br>
 
 I have experimented with several kinds of their architectures. Besides Convolutional Layers and Fully Connected Layers I have decided to use
 Batch Normalization in every single one of them. I have tried both Average Pooling and Maximum Pooling and both have been effective.
-I have also choosen to use ReLU activation function in all cases.<br><br> 
+I have also choosen to use ReLU activation function in all cases.<br>
 
 Batch Normalization has proven to greatly increase training speed, while also improving CNNs ability to fit to the data.
 Max Pooling extracts the stronges features from the feature map. In Fashion-MNIST images, edges seem to be the most important features.
-Therefore Max Pooling is a reasonable choice. However Average pooling has proved to be effective too, I suppose it's because the images are clear with no blurr.<br><br>
+Therefore Max Pooling is a reasonable choice. However Average pooling has proved to be effective too, I suppose it's because the images are clear with no blurr.<br>
 
 ReLU activation function provides non-linearity while eliminating vanishig gradient problem. Since most of the CNNs weren't shallow, sigmoidal activation functions
 didn't provide good results.<br>
+
+For the loss function I have chosen CrossEntropyLoss, because it perfmorms well in most cases. As optimizer I have chosen Adam optimization algorithm, which is and improved
+stochastic gradient descent. I have divided the data set into minibatches, each in size of 16.
+
+#### References
+Batch Normalization<br>
+Ioffe, Sergey, and Christian Szegedy. "Batch normalization: Accelerating deep network training by reducing internal covariate shift." International conference on machine learning. PMLR, 2015.
+
+Inspirations for CNNs architectures<br>
+https://towardsdatascience.com/illustrated-10-cnn-architectures-95d78ace614d?fbclid=IwAR3jPDP_7dxDurCnPmhXPK7fRlS3Vp5qM9pKri13CNufvOQjyL0spQaHQtM
+
+General machine learning knowledge and Logistic Regression<br>
+Sebastian Raschka, Vahid Mirjalili Python, Machine Learning 2019
+
+Guide on direction of parameter choices for CNN layers<br>
+https://towardsdatascience.com/a-guide-to-an-efficient-way-to-build-neural-network-architectures-part-ii-hyper-parameter-42efca01e5d7
 
 #### The best model architecture
 
@@ -138,7 +154,7 @@ The images are flattened and pushed to three fully connected layers which furthe
   <td><a href="http://fashion-mnist.s3-website.eu-central-1.amazonaws.com">Link</a></td>
  </tr>
  <tr>
-  <td>2 Conv + pooling</td>
+  <td>2 Conv + MaxPool</td>
   <td>Normalization</td>
   <td>87.75%</td>
   <td>87.72%</td>
@@ -146,7 +162,7 @@ The images are flattened and pushed to three fully connected layers which furthe
   <td><a href="https://github.com/zalandoresearch/fashion-mnist/blob/master/benchmark/convnet.py">Link</a></td>
  </tr>
  <tr>
-  <td>2 Conv + pooling + Batch Norm</td>
+  <td>2 Conv + MaxPool + Batch Norm</td>
   <td>Normalization</td>
   <td>90.07%</td>
   <td>90.13%</td>
@@ -154,7 +170,7 @@ The images are flattened and pushed to three fully connected layers which furthe
   <td><a href="https://github.com/khanguyen1207/My-Machine-Learning-Corner/blob/master/Zalando%20MNIST/fashion.ipynb">Link</a></td>
  </tr>
  <tr>
-  <td>2 Conv + Pooling + 3 FC + Batch Norm</td>
+  <td>2 Conv + MaxPool + 3 FC + Batch Norm</td>
   <td>Normalization</td>
   <td>90.69%</td>
   <td>90.67%</td>
@@ -162,7 +178,7 @@ The images are flattened and pushed to three fully connected layers which furthe
   <td><a href="https://github.com/cmasch/zalando-fashion-mnist">Link</a></td>
  </tr>
  <tr>
-  <td>2 Conv + MaxPool + 2 Conv + Pool + 3 FC + Batch Norm</td>
+  <td>2 Conv + MaxPool + 2 Conv + MaxPool + 3 FC + Batch Norm</td>
   <td>None</td>
   <td>92.20%</td>
   <td>92.12%</td>
@@ -170,7 +186,7 @@ The images are flattened and pushed to three fully connected layers which furthe
   <td><a href="https://github.com/QuantumLiu/fashion-mnist-demo-by-Keras">Link</a></td>
  </tr>
  <tr>
-  <td>2 Conv + AvgPool + 2 Conv + Pool + 3 FC + Batch Norm</td>
+  <td>2 Conv + AvgPool + 2 Conv + AvgPool + 3 FC + Batch Norm</td>
   <td>None</td>
   <td>92.43%</td>
   <td>92.42%</td>
@@ -178,7 +194,7 @@ The images are flattened and pushed to three fully connected layers which furthe
   <td>None</td>
  </tr>
  <tr>
-  <td>2 Conv + MaxPool + 2 Conv + Pool + 3 FC + Batch Norm (Edge emphasis)</td>
+  <td>2 Conv + MaxPool + 2 Conv + MaxPool + 3 FC + Batch Norm (Edge emphasis)</td>
   <td>None</td>
   <td>92.30%</td>
   <td>92.28%</td>
@@ -186,7 +202,7 @@ The images are flattened and pushed to three fully connected layers which furthe
   <td>None</td>
  </tr>
  <tr>
-  <td>2*(2 Conv + Pool) + 3 Conv + Pool + 3 FC + Batch Norm</td>
+  <td>2*(2 Conv + MaxPool) + 3 Conv + MaxPool + 3 FC + Batch Norm</td>
   <td>None</td>
   <td>92.48%</td>
   <td>92.51%</td>
@@ -194,3 +210,6 @@ The images are flattened and pushed to three fully connected layers which furthe
   <td>None</td>
  </tr>
 </table>
+
+For Logistic Regression I have achieved similar results to the ones presented on benchmark. I suppose its because the model is nothing extraordinary and implemented in similar
+way to the ones on benchmark. For most CNN approaches I have achieved similar or slightly worse results. The reasons are probably slighly diffrent architecture and parameters of layers. My conclusion is that, the deeper the network became the better results it provided, therefore usage of a deep convolutional network could give the best results.
