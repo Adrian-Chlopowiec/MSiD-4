@@ -1,5 +1,5 @@
 # Introduction
-Fashion-MNIST is a dataset of Zalando's article images. The dataset is divided into two parts:
+**Fashion-MNIST** is a dataset of Zalando's article images. The dataset is divided into two parts:
 - Training set consisting of 60000 images
 - Test set consisting of 10000 images
 
@@ -71,7 +71,7 @@ The images are all greyscale and centered. Each training and test sample is assi
 ### Preprocessing
 I have normalized images for following classificators:
 - Logistic Regression
-- 2 Conv + 2 Pool Convolutional Neural Network (CNN)
+- 2 Conv + 2 Pool Convolutional Neural Network **(CNN)**
 - 2 Conv + 2 Pool CNN with Batch Normalization
 - 2 Conv + 2 Pool + 3 FC CNN with Batch Normalization
 
@@ -86,32 +86,32 @@ Concat - concatenation of two parallel modules of the same structure<br>
 FC - fully connected layer<br>
 
 ### Logistic Regression<br>
-The first model I have tested was Logistic Regression implemented in scikit-learn. The Logistic Regression is a linear model.<br>
+The first model I have tested was **Logistic Regression** implemented in *scikit-learn*. The **Logistic Regression** is a linear model.<br>
 In the multiclass problem it uses one-vs-rest scheme. The model uses L2 regularization. I have performed grid search with cross-validation on the model
 to find the best set of hyper-parameter.<br><br>
 These are:<br>
 C: 0.1<br>
 fit_intercept: False<br>
 The rest of parameters have default value.<br><br>
-I have performed normalization of images and I have experimented with Principal Component Analysis (PCA). Due to the nature of the problem,
-reducing dimensionality didn't provide good results. Therefore in the end I have decided not to use PCA.<br>
+I have performed normalization of images and I have experimented with *Principal Component Analysis (PCA)*. Due to the nature of the problem,
+reducing dimensionality didn't provide good results. Therefore in the end I have decided not to use *PCA*.<br>
 
 ### Convolutional Neural Network<br>
-CNNs have become state-of-the-art computer vision technique. Among many kind of Neural Networks, these have proved to be very successful in image classification
+**CNNs** have become state-of-the-art computer vision technique. Among many kind of Neural Networks, these have proved to be very successful in image classification
 with reasonable computational cost.<br>
 
-I have experimented with several kinds of their architectures. Besides Convolutional Layers and Fully Connected Layers I have decided to use
-Batch Normalization in every single one of them. I have tried both Average Pooling and Maximum Pooling and both have been effective.
-I have also choosen to use ReLU activation function in all cases.<br>
+I have experimented with several kinds of their architectures. Besides *Convolutional Layers* and *Fully Connected Layers* I have decided to use
+*Batch Normalization* in every single one of them. I have tried both *Average Pooling* and *Maximum Pooling* and both have been effective.
+I have also choosen to use *ReLU* activation function in all cases.<br>
 
-Batch Normalization has proven to greatly increase training speed, while also improving CNNs ability to fit to the data.
-Max Pooling extracts the stronges features from the feature map. In Fashion-MNIST images, edges seem to be the most important features.
-Therefore Max Pooling is a reasonable choice. However Average pooling has proved to be effective too, I suppose it's because the images are clear with no blurr.<br>
+*Batch Normalization* has proven to greatly increase training speed, while also improving CNNs ability to fit to the data.
+*Max Pooling* extracts the stronges features from the feature map. In Fashion-MNIST images, edges seem to be the most important features.
+Therefore *Max Pooling* is a reasonable choice. However *Average Pooling* has proved to be effective too, I suppose it's because the images are clear with no blurr.<br>
 
-ReLU activation function provides non-linearity while eliminating vanishig gradient problem. Since most of the CNNs weren't shallow, sigmoidal activation functions
+*ReLU* activation function provides non-linearity while eliminating vanishig gradient problem. Since most of the CNNs weren't shallow, sigmoidal activation functions
 didn't provide good results.<br>
 
-For the loss function I have chosen CrossEntropyLoss, because it perfmorms well in most cases. As optimizer I have chosen Adam optimization algorithm, which is and improved
+For the loss function I have chosen *CrossEntropyLoss*, because it perfmorms well in most cases. As optimizer I have chosen Adam optimization algorithm, which is and improved
 stochastic gradient descent. I have divided the data set into minibatches, each in size of 16.
 
 #### References
@@ -148,7 +148,7 @@ The images are flattened and pushed to three fully connected layers which furthe
  <tr>
   <td>Logistic Regression</td>
   <td>Normalization</td>
-  <td>84.39%</td>
+  <td>92.16%</td>
   <td>84.31%</td>
   <td>84.00%</td>
   <td><a href="http://fashion-mnist.s3-website.eu-central-1.amazonaws.com">Link</a></td>
@@ -213,3 +213,21 @@ The images are flattened and pushed to three fully connected layers which furthe
 
 For Logistic Regression I have achieved similar results to the ones presented on benchmark. I suppose its because the model is nothing extraordinary and implemented in similar
 way to the ones on benchmark. For most CNN approaches I have achieved similar or slightly worse results. The reasons are probably slighly diffrent architecture and parameters of layers. My conclusion is that, the deeper the network became the better results it provided, therefore usage of a deep convolutional network could give the best results.
+
+# Usage
+If you don't have Anaconda install it following offical guide:<br>
+https://docs.anaconda.com/anaconda/install/index.html
+
+If you don't have git you can either install it and clone this repository or download code as zip:<br>
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+1. Open Anaconda.
+2. Create a virtual enviroment with `conda create --name name_of_env`
+3. Activate a virtual enviroment with `conda activate name_of_env`
+4. Install requirements.txt with `conda install --file requirements.txt`
+5. Open Jupyter Lab with `jupyter lab`. Make sure you are in a parent folder of downloaded repository.
+6. Move to the MSiD-4 folder.
+7. Open MSiD-Zadanie4.ipynb
+8. You can run the code with one click on button on the upper side of notebok: "Restart the kernel, and re-run the whole notebook".
+9. The data is downloaded automatically by PyTorch to data folder.
+10. In section Convolutional Neural Network Model -> Model Evalutaion you can load several saved pre-trained models to check their accuracy running the cell below.
