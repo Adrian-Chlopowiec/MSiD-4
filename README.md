@@ -115,16 +115,16 @@ For the loss function I have chosen *CrossEntropyLoss*, because it perfmorms wel
 stochastic gradient descent. I have divided the data set into minibatches, each in size of 16.
 
 #### References
-Batch Normalization<br>
+**Batch Normalization**<br>
 Ioffe, Sergey, and Christian Szegedy. "Batch normalization: Accelerating deep network training by reducing internal covariate shift." International conference on machine learning. PMLR, 2015.
 
-Inspirations for CNNs architectures<br>
+**Inspirations for CNNs architectures**<br>
 https://towardsdatascience.com/illustrated-10-cnn-architectures-95d78ace614d?fbclid=IwAR3jPDP_7dxDurCnPmhXPK7fRlS3Vp5qM9pKri13CNufvOQjyL0spQaHQtM
 
-General machine learning knowledge and Logistic Regression<br>
+**General machine learning knowledge and Logistic Regression**<br>
 Sebastian Raschka, Vahid Mirjalili Python, Machine Learning 2019
 
-Guide on direction of parameter choices for CNN layers<br>
+**Guide on direction of parameter choices for CNN layers**<br>
 https://towardsdatascience.com/a-guide-to-an-efficient-way-to-build-neural-network-architectures-part-ii-hyper-parameter-42efca01e5d7
 
 #### The best model architecture
@@ -224,10 +224,11 @@ https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 1. Open Anaconda.
 2. Create a virtual enviroment with `conda create --name name_of_env`
 3. Activate a virtual enviroment with `conda activate name_of_env`
-4. Install requirements.txt with `conda install --file requirements.txt`
-5. Open Jupyter Lab with `jupyter lab`. Make sure you are in a parent folder of downloaded repository.
-6. Move to the MSiD-4 folder.
-7. Open MSiD-Zadanie4.ipynb
-8. You can run the code with one click on button on the upper side of notebok: "Restart the kernel, and re-run the whole notebook".
-9. The data is downloaded automatically by PyTorch to data folder.
-10. In section Convolutional Neural Network Model -> Model Evalutaion you can load several saved pre-trained models to check their accuracy running the cell below.
+4. Move to the folder with my repository code.
+5. Install requirements.txt with `conda install --file requirements.txt`
+6. Open Jupyter Lab with `jupyter lab`. Make sure you are in a parent folder of downloaded repository.
+7. Move to the MSiD-4 folder.
+8. Open MSiD-Zadanie4.ipynb
+9. You can run the code with one click on button on the upper side of notebok: "Restart the kernel, and re-run the whole notebook".
+10. The data is downloaded automatically by PyTorch to data folder.
+11. In section Convolutional Neural Network Model -> Model Evalutaion you can load several saved pre-trained models to check their accuracy running the cell below.
